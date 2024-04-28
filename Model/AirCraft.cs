@@ -10,8 +10,6 @@ namespace Task_2_2.Model
 {
     internal abstract class AirCraft : INotifyPropertyChanged
     {
-        //protected const int MINIMAL_HEIGHT_ABOVE_GROUND = 80;
-
         protected int maxHeightAboveGround; //максимальная высота, куда взлетаем
         protected int currentHeightAboveGround; //текущая высота
         protected int stepForHeight; //пока не нужен (шаг для набора высоты)
@@ -21,7 +19,6 @@ namespace Task_2_2.Model
             this.maxHeightAboveGround = maxHeightAboveGround;
             this.stepForHeight = stepForHeight;
             currentHeightAboveGround = 0;
-            //currentHeightAboveGround = MINIMAL_HEIGHT_ABOVE_GROUND;
         }
 
         protected AirCraft(int maxHeightAboveGround)
@@ -41,14 +38,6 @@ namespace Task_2_2.Model
                 NotifyPropertyChanged(nameof(CurrentHeightAboveGround));
             } 
         }
-
-        //public int minHeghtAboveGround
-        //{
-        //    get
-        //    {
-        //        return MINIMAL_HEIGHT_ABOVE_GROUND;
-        //    }
-        //}
 
         public abstract bool Up();
         public abstract bool Down();
